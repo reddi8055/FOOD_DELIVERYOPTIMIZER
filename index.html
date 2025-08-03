@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Delivery Optimizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>⚡️ Food Delivery Optimizer</h1>
+    <p>Using Dijkstra's algorithm to find the shortest delivery routes between restaurants and customers</p>
+  </header>
+
+  <main>
+    <section class="graph-section">
+      <h2>Delivery Network - Suburban District</h2>
+      <canvas id="graphCanvas" width="800" height="500"></canvas>
+      <div class="legend">
+        <p><span class="dot restaurant"></span> Restaurant</p>
+        <p><span class="dot customer"></span> Customer</p>
+        <p><span class="dot intersection"></span> Intersection</p>
+      </div>
+    </section>
+
+    <section class="controls">
+      <h3>Delivery Controls</h3>
+      <label for="start">Start:</label>
+      <select id="start"></select>
+      <label for="end">End:</label>
+      <select id="end"></select>
+      <button onclick="optimizeRoute()">▶ Optimize Route</button>
+      <button onclick="resetGraph()">Reset</button>
+    </section>
+
+    <section class="route-info">
+      <h3>Route Information</h3>
+      <div id="distance">Total Distance: -</div>
+      <div id="time">Estimated Time: -</div>
+      <div id="path">Route Path: -</div>
+    </section>
+
+    <section class="stats">
+      <h3>Network Statistics</h3>
+      <p id="stats"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Dijkstra's Algorithm: O((V + E) log V) - Optimal for graphs with positive weights</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
